@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
-* m_ad - function that adds the top two elements of the stack
+* f_add - function that adds the top two elements of the stack
 * @head: double pointer head to the stack
 * @counter: line count
 *
 * Return: nothing
 */
-void m_ad(stack_t **head, unsigned int counter)
+void f_add(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int length = 0, temp;
@@ -34,13 +34,13 @@ void m_ad(stack_t **head, unsigned int counter)
 }
 
 /**
-* m_su - function that substracts nodes
+* f_sub - function that substracts nodes
 * @head: double head pointer to the stack
 * @counter: line count
 *
 * Return: nothing
 */
-void m_su(stack_t **head, unsigned int counter)
+void f_sub(stack_t **head, unsigned int counter)
 {
 	stack_t *temp;
 	int sub, nd;
@@ -64,13 +64,13 @@ void m_su(stack_t **head, unsigned int counter)
 }
 
 /**
-* m_mu - function that multiplies the top two elements of the stack
+* f_mul - function that multiplies the top two elements of the stack
 * @head: double head pointer to the stack
 * @counter: line count
 *
 * Return: nothing
 */
-void m_mu(stack_t **head, unsigned int counter)
+void f_mul(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int length = 0, temp;
@@ -97,13 +97,13 @@ void m_mu(stack_t **head, unsigned int counter)
 }
 
 /**
-* m_di - function that divides the top two elements of the stack
+* f_div - function that divides the top two elements of the stack
 * @head: double head pointer to the stack
 * @counter: line count
 *
 * Return: nothing
 */
-void m_di(stack_t **head, unsigned int counter)
+void f_div(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int length = 0, temp;
@@ -138,14 +138,14 @@ void m_di(stack_t **head, unsigned int counter)
 }
 
 /**
-* m_mo - function that computes the remainder of the division of the second
+* f_mod - function that computes the remainder of the division of the second
 * top element of the stack by the top element of the stack
 * @head: double head pointer to the stack
 * @counter: line count
 *
 * Return: nothing
 */
-void m_mo(stack_t **head, unsigned int counter)
+void f_mod(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 	int length = 0, temp;

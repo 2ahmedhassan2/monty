@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
-* fr_st - function that frees a doubly linked list
+* free_stack - function that frees a doubly linked list
 * @head: head pointer to the stack
 *
 * Return: nothing
 */
-void fr_st(stack_t *head)
+void free_stack(stack_t *head)
 {
 	stack_t *temp;
 
@@ -20,13 +20,13 @@ void fr_st(stack_t *head)
 }
 
 /**
-* m_st - function that prints the top
+* f_stack - function that prints the top
 * @head: head of stack
 * @counter: line count
 *
 * Return: nothing
 */
-void m_st(stack_t **head, unsigned int counter)
+void f_stack(stack_t **head, unsigned int counter)
 {
 	(void)head;
 	(void)counter;
