@@ -1,5 +1,5 @@
-#ifndef TADEM_H
-#define TADEM_H
+#ifndef MONTY_H
+#define MONTY_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -62,27 +62,27 @@ extern bus_t bus;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
-void f_push(stack_t **head, unsigned int number);
-void f_pall(stack_t **head, unsigned int number);
-void f_pint(stack_t **head, unsigned int number);
-int execute(char *content, stack_t **head, unsigned int counter, FILE *file);
-void free_stack(stack_t *head);
-void f_pop(stack_t **head, unsigned int counter);
-void f_swap(stack_t **head, unsigned int counter);
-void f_add(stack_t **head, unsigned int counter);
-void f_nop(stack_t **head, unsigned int counter);
-void f_sub(stack_t **head, unsigned int counter);
-void f_div(stack_t **head, unsigned int counter);
-void f_mul(stack_t **head, unsigned int counter);
-void f_mod(stack_t **head, unsigned int counter);
-void f_pchar(stack_t **head, unsigned int counter);
-void f_pstr(stack_t **head, unsigned int counter);
-void f_rotl(stack_t **head, unsigned int counter);
-void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
-void addnode(stack_t **head, int n);
-void addqueue(stack_t **head, int n);
-void f_queue(stack_t **head, unsigned int counter);
-void f_stack(stack_t **head, unsigned int counter);
+void m_pu(stack_t **head, unsigned int number);
+void m_pa(stack_t **head, unsigned int number);
+void m_pi(stack_t **head, unsigned int number);
+int exe(char *content, stack_t **head, unsigned int counter, FILE *file);
+void fr_st(stack_t *head);
+void m_po(stack_t **head, unsigned int counter);
+void m_sw(stack_t **head, unsigned int counter);
+void m_ad(stack_t **head, unsigned int counter);
+void m_no(stack_t **head, unsigned int counter);
+void m_su(stack_t **head, unsigned int counter);
+void m_di(stack_t **head, unsigned int counter);
+void m_mu(stack_t **head, unsigned int counter);
+void m_mo(stack_t **head, unsigned int counter);
+void m_pc(stack_t **head, unsigned int counter);
+void m_ps(stack_t **head, unsigned int counter);
+void m_rot(stack_t **head, unsigned int counter);
+void m_ro(stack_t **head, __attribute__((unused)) unsigned int counter);
+void adno(stack_t **head, int n);
+void adqu(stack_t **head, int n);
+void m_qu(stack_t **head, unsigned int counter);
+void m_st(stack_t **head, unsigned int counter);
 
 
 #endif

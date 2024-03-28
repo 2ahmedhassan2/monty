@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
-* f_pop - function that prints the top of the stack
+* m_po - function that prints the top of the stack
 * @head: double head pointer to the stack
 * @counter: line count
 *
 * Return: nothing
 */
-void f_pop(stack_t **head, unsigned int counter)
+void m_po(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
 
@@ -25,13 +25,13 @@ void f_pop(stack_t **head, unsigned int counter)
 }
 
 /**
-* f_pint - function that prints the top of the stack
+* m_pi - function that prints the top of the stack
 * @head: double head pointer to the stack
 * @counter: line count
 *
 * Return: nothing
 */
-void f_pint(stack_t **head, unsigned int counter)
+void m_pi(stack_t **head, unsigned int counter)
 {
 	if (*head == NULL)
 	{
@@ -45,13 +45,13 @@ void f_pint(stack_t **head, unsigned int counter)
 }
 
 /**
-* f_nop - function that does nothing
+* m_no - function that does nothing
 * @head: double head pointer to the stack
 * @counter: line count
 *
 * Return: nothing
 */
-void f_nop(stack_t **head, unsigned int counter)
+void m_no(stack_t **head, unsigned int counter)
 {
 	(void) counter;
 	(void) head;
