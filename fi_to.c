@@ -1,17 +1,17 @@
 #include "monty.h"
 
 /**
- * op_fi - opens a file
- * @fi_na: the file namepath
+ * open_file - opens a file
+ * @file_name: the file namepath
  * Return: void
  */
 
-void op_fi(char *fi_na)
+void open_file(char *file_name)
 {
-	FILE *fd = fopen(fi_na, "r");
+	FILE *fd = fopen(file_name, "r");
 
-	if (fi_na == NULL || fd == NULL)
-		err(2, fi_na);
+	if (file_name == NULL || fd == NULL)
+		err(2, file_name);
 
 	read_file(fd);
 	fclose(fd);
@@ -19,12 +19,12 @@ void op_fi(char *fi_na)
 
 
 /**
- * re_fi - reads a file
+ * read_file - reads a file
  * @fd: pointer to file descriptor
  * Return: void
  */
 
-void re_fi(FILE *fd)
+void read_file(FILE *fd)
 {
 	int line_number, format = 0;
 	char *buffer = NULL;
@@ -48,7 +48,7 @@ void re_fi(FILE *fd)
  * Return: Returns 0 if the opcode is stack. 1 if queue.
  */
 
-int pa_li(char *buffer, int line_number, int format)
+int parse_line(char *buffer, int line_number, int format)
 {
 	char *opcode, *value;
 	const char *delim = "\n ";
@@ -71,7 +71,7 @@ int pa_li(char *buffer, int line_number, int format)
 }
 
 /**
- * fi_fu - find the appropriate function for the opcode
+ * find_func - find the appropriate function for the opcode
  * @opcode: opcode
  * @value: argument of opcode
  * @format:  storage format. If 0 Nodes will be entered as a stack.
@@ -79,7 +79,7 @@ int pa_li(char *buffer, int line_number, int format)
  * if 1 nodes will be entered as a queue.
  * Return: void
  */
-void fi_fu(char *opcode, char *value, int ln, int format)
+void find_func(char *opcode, char *value, int ln, int format)
 {
 	int i;
 	int flag;
@@ -120,7 +120,7 @@ void fi_fu(char *opcode, char *value, int ln, int format)
 
 
 /**
- * ca_fu - Calls the required function.
+ * call_fun - Calls the required function.
  * @func: Pointer to the function that is about to be called.
  * @op: string representing the opcode.
  * @val: string representing a numeric value.
@@ -128,7 +128,7 @@ void fi_fu(char *opcode, char *value, int ln, int format)
  * @format: Format specifier. If 0 Nodes will be entered as a stack.
  * if 1 nodes will be entered as a queue.
  */
-void ca_fu(op_func func, char *op, char *val, int ln, int format)
+void call_fun(op_func func, char *op, char *val, int ln, int format)
 {
 	stack_t *node;
 	int flag;
