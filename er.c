@@ -1,0 +1,104 @@
+#include "mo.h"
+
+/**
+ * er - Prints appropiate error messages determined by their error code.
+ * @er_co: The error codes are the following:
+ */
+void er(int er_co, ...)
+{
+	va_list ag;
+	char *op;
+	int l_num;
+
+	va_start(ag, er_co);
+	switch (er_co)
+	{
+		case 1:
+			fprintf(stderr, "USAGE: monty file\n");
+			break;
+		case 2:
+			fprintf(stderr, "Error: Can't open file %s\n",
+				va_arg(ag, char *));
+			break;
+		case 3:
+			l_num = va_arg(ag, int);
+			op = va_arg(ag, char *);
+			fprintf(stderr, "L%d: unknown instruction %s\n", l_num, op);
+			break;
+		case 4:
+			fprintf(stderr, "Error: malloc failed\n");
+			break;
+		case 5:
+			fprintf(stderr, "L%d: usage: push integer\n", va_arg(ag, int));
+			break;
+		default:
+			break;
+	}
+	free_nodes();
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * mo_er - handles errors.
+ * @er_co: The error codes are the following:
+ */
+void mo_er(int er_co, ...)
+{
+	va_list ag;
+	char *op;
+	int l_num;
+
+	va_start(ag, er_co);
+	switch (er_co)
+	{
+		case 6:
+			fprintf(stderr, "L%d: can't pint, stack empty\n",
+				va_arg(ag, int));
+			break;
+		case 7:
+			fprintf(stderr, "L%d: can't pop an empty stack\n",
+				va_arg(ag, int));
+			break;
+		case 8:
+			l_num = va_arg(ag, unsigned int);
+			op = va_arg(ag, char *);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", l_num, op);
+			break;
+		case 9:
+			fprintf(stderr, "L%d: division by zero\n",
+				va_arg(ag, unsigned int));
+			break;
+		default:
+			break;
+	}
+	free_nodes();
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * st_er - handles errors.
+ * @er_co: The error codes are the following:
+ * (10) ~> The number inside a node is outside ASCII bounds.
+ * (11) ~> The stack is empty.
+ */
+void st_er(int er_co, ...)
+{
+	va_list ag;
+	int l_num;
+
+	va_start(ag, er_co);
+	l_num = va_arg(ag, int);
+	switch (er_co)
+	{
+		case 10:
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
+			break;
+		case 11:
+			fprintf(stderr, "L%d: can't pchar, stack empty\n", l_num);
+			break;
+		default:
+			break;
+	}
+	free_nodes();
+	exit(EXIT_FAILURE);
+}
