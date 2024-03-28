@@ -2,16 +2,16 @@
 
 /**
  * er - Prints appropiate error messages determined by their error code.
- * @er_co: The error codes are the following:
+ * @error_code: The error codes are the following:
  */
-void er(int er_co, ...)
+void er(int error_code, ...)
 {
 	va_list ag;
 	char *op;
 	int l_num;
 
-	va_start(ag, er_co);
-	switch (er_co)
+	va_start(ag, error_code);
+	switch (error_code)
 	{
 		case 1:
 			fprintf(stderr, "USAGE: monty file\n");
@@ -40,16 +40,16 @@ void er(int er_co, ...)
 
 /**
  * mo_er - handles errors.
- * @er_co: The error codes are the following:
+ * @error_code: The error codes are the following:
  */
-void mo_er(int er_co, ...)
+void mo_er(int error_code, ...)
 {
 	va_list ag;
 	char *op;
 	int l_num;
 
-	va_start(ag, er_co);
-	switch (er_co)
+	va_start(ag, error_code);
+	switch (error_code)
 	{
 		case 6:
 			fprintf(stderr, "L%d: can't pint, stack empty\n",
@@ -77,18 +77,18 @@ void mo_er(int er_co, ...)
 
 /**
  * st_er - handles errors.
- * @er_co: The error codes are the following:
+ * @error_code: The error codes are the following:
  * (10) ~> The number inside a node is outside ASCII bounds.
  * (11) ~> The stack is empty.
  */
-void st_er(int er_co, ...)
+void st_er(int error_code, ...)
 {
 	va_list ag;
 	int l_num;
 
-	va_start(ag, er_co);
+	va_start(ag, error_code);
 	l_num = va_arg(ag, int);
-	switch (er_co)
+	switch (error_code)
 	{
 		case 10:
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", l_num);
