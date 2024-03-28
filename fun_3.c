@@ -51,7 +51,7 @@ void f_pint(stack_t **head, unsigned int counter)
 *
 * Return: nothing
 */
-void m_no(stack_t **head, unsigned int counter)
+void f_nop(stack_t **head, unsigned int counter)
 {
 	(void) counter;
 	(void) head;
